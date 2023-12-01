@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christian Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    .nav-item::after {
+            content: "";
+            width: 0;
+            height: 3px;
+            background-color: #3366FF;
+            margin: auto;
+            display: block;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+            transition: width 0.3s linear;
+        }
+
+        #customerNameEmail {
+            align-self: flex-start;
+            /* To align the name and email to the left */
+        }
+
+        .id {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .large-icon {
+            margin-left: 75px;
+            width: 40px;
+        }
+
+        .navbar {
+            background-color: #fff;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: black;
+            font-size: 21px;
+            margin-left: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* .nav-link:hover {
+            color: #fff;
+            border-radius: 10px;
+            background-color: #3366FF;
+        } */
+
+        .list-group p a {
+            font-size: 20px;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .list-group p:hover {
+            text-decoration: none;
+        }
+
+        .navbar-brand img {
+            width: 200px;
+            height: 80px;
+        }
+
+    .home {
+      margin-top: 3%;
+      background-image: url(images/rel-back.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 400px;
+    }
+
+    .content h2 {
+      font-size: 70px;
+      color: #fff;
+      text-align: center;
+      padding-top: 10%;
+      font-weight: 550;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .content p {
+      color: #fff;
+      padding-top: 2%;
+      text-align: center;
+      font-size: 25px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+    }
+
+    .muslim-religion h2 {
+      text-align: center;
+      color: #000;
+      font-size: 40px;
+      font-family: sans-serif;
+      padding-top: 3%;
+      font-weight: 550;
+    }
+
+    .muslim-religion span {
+      color: #3366FF;
+      font-size: 50px;
+    }
+
+    .muslim-religion p {
+      color: #000;
+      text-align: center;
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+      padding-top: 1%;
+    }
+
+    .par {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+      font-size: 17px;
+      display: none;
+    }
+
+    .muslim-festival h2 {
+      text-align: center;
+      color: #000;
+      font-size: 40px;
+      font-family: sans-serif;
+      padding-top: 3%;
+      font-weight: 550;
+    }
+
+    .muslim-festival span {
+      color: #3366FF;
+      font-size: 50px;
+    }
+
+    .muslim-festival p {
+      text-align: center;
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+      padding-top: 1%;
+    }
+
+    .par1 {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+      font-size: 17px;
+      display: none;
+    }
+
+    #card {
+      margin: 60px;
+      padding: 20px;
+    }
+
+    .about {
+      background-image: url(images/h-about.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: auto;
+      height: 300px;
+    }
+
+    .content1 {
+      text-align: center;
+      padding-top: 7%;
+    }
+
+    .content1 h2 {
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 45px;
+      font-weight: 550;
+    }
+
+    .content1 p {
+      color: #fff;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 500;
+    }
+
+    .ramzan-blog h2 {
+      text-align: center;
+      color: #000;
+      font-size: 40px;
+      font-family: sans-serif;
+      padding-top: 3%;
+      font-weight: 550;
+    }
+
+    .ramzan-blog span {
+      color: #3366FF;
+      font-size: 50px;
+    }
+
+    .ramzan-blog p {
+      text-align: center;
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+      padding-top: 1%;
+    }
+
+    .ram-content {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+      font-size: 17px;
+      display: none;
+    }
+
+    .eid-blog h2 {
+      text-align: center;
+      color: #000;
+      font-size: 40px;
+      font-family: sans-serif;
+      padding-top: 3%;
+      font-weight: 550;
+    }
+
+    .eid-blog span {
+      color: #3366FF;
+      font-size: 50px;
+    }
+
+    .eid-blog p {
+      text-align: center;
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+      padding-top: 1%;
+    }
+
+    .eid-content {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+      font-size: 17px;
+      display: none;
+    }
+
+    .adha-blog h2 {
+      text-align: center;
+      color: #000;
+      font-size: 40px;
+      font-family: sans-serif;
+      padding-top: 3%;
+      font-weight: 550;
+    }
+
+    .adha-blog span {
+      color: #3366FF;
+      font-size: 50px;
+    }
+
+    .adha-blog p {
+      text-align: center;
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+      padding-top: 1%;
+    }
+
+    .adha-content {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 550;
+      font-size: 17px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="home.html"><img src="images/logo1.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown position-static">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-mdb-toggle="dropdown" aria-expanded="false">
+                        Religions
+                    </a>
+                    <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown" style="
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                          ">
+                        <div class="container">
+                            <div class="row my-4">
+                                <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                    <div class="list-group list-group-flush">
+                                        <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                            <a href="muslim-blog.html" style="color: green;"><b>Muslim's
+                                                    Religion</b></a>
+                                        </p>
+                                        <a href="" class="list-group-item list-group-item-action"
+                                            style="font-size: 19px;color: green;"><b>Festival's</b></a>
+                                        <a href="muslim-blog.html #ramzan-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Ramadan</b></a>
+                                        <a href="muslim-blog.html #eid-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Eid-ul-Fitr</b></a>
+                                        <a href="muslim-blog.html #adha-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Eid-ul-Adha</b></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                    <div class="list-group list-group-flush">
+                                        <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                            <a href="hindu-blog.html" style="color: red;"><b>Hindu's
+                                                    Religion</b></a>
+                                        </p>
+                                        <a href="" class="list-group-item list-group-item-action"
+                                            style="font-size: 19px;color: red;"><b>Festival's</b></a>
+                                        <a href="hindu-blog.html #holy-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Holy</b></a>
+                                        <a href="hindu-blog.html #diwali-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Diwali</b></a>
+                                        <a href="hindu-blog.html #navratri-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Navratri</b></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                    <div class="list-group list-group-flush">
+                                        <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                            <a href="christian-blog.html" style="color: purple;"><b>Christian
+                                                    Religion</b></a>
+                                        </p>
+                                        <a href="" class="list-group-item list-group-item-action"
+                                            style="font-size: 19px;color: purple;"><b>Festival's</b></a>
+                                        <a href="christian-blog.html #christmas-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Christmas</b></a>
+                                        <a href="christian-blog.html #easter-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Easter</b></a>
+                                        <a href="christian-blog.html #good-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Good Friday</b></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="list-group list-group-flush">
+                                        <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                                            <a href="sikh-blog.html" style="color: #FF6600;"><b>Sikhism
+                                                    Religion</b></a>
+                                        </p>
+                                        <a href="" class="list-group-item list-group-item-action"
+                                            style="font-size: 19px;color: #FF6600;"><b>Festival's</b></a>
+                                        <a href="sikh-blog.html #guru-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Guru Nanak</b></a>
+                                        <a href="sikh-blog.html #bai-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Baisakhi</b></a>
+                                        <a href="sikh-blog.html #vai-id"
+                                            class="list-group-item list-group-item-action"
+                                            style="color: #000;font-size: 17px;"><b>Vaisakhi</b></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cont.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./login.html#sign-in" target="_blank">Login</a>
+                </li>
+                <!-- login user id -->
+                <span class="id">
+                    <div id="customerInfo" class="d-flex flex-column align-items-start">
+                        <a href="login.html"> <!-- Anchor element with the link -->
+                            <i class="fas fa-user-circle mb-2 large-icon"></i>
+                        </a>
+                        <div id="customerNameEmail">
+                            <!-- Customer's name and email will be inserted here -->
+                        </div>
+                    </div>
+                </span>
+            </ul>
+        </div>
+    </div>
+</nav><br><br><br>
+  <div class="home">
+    <div class="content">
+      <h2 data-aos="fade-right">Christian Blog</h2>
+      <p data-aos="fade-left">Here is a short Christian blog.</p>
+    </div>
+  </div><br><br>
+  <div class="m-rel">
+    <div class="muslim-religion">
+      <h2 data-aos="fade-down"><span>C</span>hristian <span>R</span>eligion</h2>
+      <p data-aos="fade-up">Christianity, one of the world's largest and most influential religions, serves as a beacon
+        of hope and
+        spiritual guidance for billions of people globally. Rooted in the life and teachings of Jesus Christ,
+        Christianity
+        encompasses a rich tapestry of beliefs, traditions, and moral principles that continue to shape the lives and
+        values
+        of its followers.</p>
+    </div>
+  </div><br>
+  <p class="par">At the heart of Christianity lies the profound message of love, compassion, and forgiveness,
+    exemplified through the life and teachings of Jesus Christ. His selfless sacrifice on the cross is considered the
+    ultimate act of redemption, emphasizing the importance of faith, salvation, and the promise of eternal life for
+    those who believe in him.</p>
+  <center>
+    <button id="show" class="btn btn-primary">Read more</button><br><br><br>
+    <hr><br>
+  </center><br><br>
+  <div class="muslim-festival">
+    <h2 data-aos="fade-down"><span>C</span>hristian <span>F</span>estivals</h2>
+    <p data-aos="fade-up">Christian festivals are vibrant expressions of faith, joy, and spiritual renewal, marking
+      significant milestones in the life and teachings of Jesus Christ. These celebrations serve as poignant reminders
+      of the central tenets of the Christian faith, fostering a sense of communal unity, gratitude, and reverence for
+      the divine.</p>
+  </div><br>
+  <p class="par1">Christmas, the annual festival commemorating the birth of Jesus Christ, encapsulates the spirit of
+    love, generosity, and goodwill. Celebrated with fervor on December 25th, Christmas is a time for families and
+    communities to come together, exchange gifts, and share in the joyous festivities that underscore the message of
+    peace and redemption brought by the birth of Christ.</p>
+  <center>
+    <button id="showf" class="btn btn-primary">Read more</button>
+  </center><br><br>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4" id="card">
+    <div class="col">
+      <div class="card h-100" data-aos="flip-left">
+        <img src="images/christmas-festival.jpg" class="card-img-top" alt="Skyscrapers" />
+        <div class="card-body">
+          <h5 class="card-title">Christmas</h5>
+          <p class="card-text">This is the easter culture festival. </p>
+          <a href="ramdan-festival.html"><button class="btn btn-primary">See more</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" data-aos="fade-up">
+        <img src="images/easter-festival.jpg" class="card-img-top" alt="Los Angeles Skyscrapers" />
+        <div class="card-body">
+          <h5 class="card-title">Easter</h5>
+          <p class="card-text">This is the Christian culture festival.</p>
+          <a href="eid-festival.html"><button class="btn btn-primary">See more</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" data-aos="flip-left">
+        <img src="images/goodf.avif" class="card-img-top" alt="Palm Springs Road" />
+        <div class="card-body">
+          <h5 class="card-title">Good Friday</h5>
+          <p class="card-text">This is the Christian culture festival.</p>
+          <a href="adha-festival.html"><button class="btn btn-primary">See more</button></a>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  <hr><br><br>
+  <div class="ramzan-blog">
+    <h2 data-aos="fade-down" id="christmas-id"><span>C</span>hristmas <span>B</span>log</h2>
+    <p data-aos="fade-up"> Christmas, the annual festival commemorating the birth of Jesus Christ, encapsulates the
+      spirit of love, generosity, and goodwill. Celebrated with fervor on December 25th, Christmas is a time for
+      families and communities to come together, exchange gifts, and share in the joyous festivities that underscore the
+      message of peace and redemption brought by the birth of Christ.</p>
+  </div><br><br>
+  <div class="ram-content">
+    <center>
+      <img src="images/christmas-festival.jpg" class="img-fluid" alt="..." style="width: 400px;height: 300px;">
+    </center><br>
+    <p>Christmas is one of the most widely celebrated Christian festivals, commemorating the birth of Jesus Christ.
+      Observed on December 25th, it is a time for joyous celebrations, gift-giving, and gatherings with friends and
+      family. Churches hold special services, and many communities engage in charitable activities, spreading the
+      message of love, peace, and goodwill.</p>
+  </div>
+  <center>
+    <button id="showr" class="btn btn-primary">Read more</button>
+  </center><br><br>
+  <div class="eid-blog">
+    <h2 data-aos="fade-down" id="easter-id"><span>E</span>aster <span>B</span>log</h2>
+    <p data-aos="fade-up">Easter is a significant Christian festival that celebrates the resurrection of Jesus Christ
+      from the dead. It is observed on the first Sunday following the first full moon after the vernal equinox. The day
+      holds deep spiritual significance, emphasizing the triumph of life over death and the hope of redemption. Easter
+      is marked with church services, prayer vigils, and the tradition of Easter eggs and the Easter bunny, symbolizing
+      new life and rebirth.</p>
+  </div><br><br>
+  <div class="eid-content">
+    <center>
+      <img src="images/easter-festival.jpg" class="img-fluid" alt="..." style="width: 400px;height: 300px;">
+    </center><br>
+    <p>Easter, the cornerstone of the Christian faith, signifies the triumph of life over death, as it commemorates the
+      resurrection of Jesus Christ. Observed with deep reverence and spiritual contemplation, Easter symbolizes the hope
+      of redemption and new beginnings, encouraging believers to reflect on the profound sacrifice and unwavering love
+      of Christ for humanity.</p>
+  </div>
+  <center>
+    <button id="showe" class="btn btn-primary">Read more</button>
+  </center><br><br>
+  <div class="adha-blog">
+    <h2 data-aos="fade-down" id="good-id"><span>G</span>ood <span>F</span>riday <span>A</span>dha</h2>
+    <p data-aos="fade-up">Good Friday is a solemn Christian observance that commemorates the crucifixion of Jesus Christ
+      and his death at Calvary. It falls on the Friday before Easter Sunday. Many Christian denominations hold special
+      services that reflect on the suffering and sacrifice of Jesus, fostering an atmosphere of reflection, repentance,
+      and spiritual contemplation.</p>
+  </div><br><br>
+  <div class="adha-content">
+    <center>
+      <img src="images/goodf.avif" class="img-fluid" alt="..." style="width: 400px;height: 300px;">
+    </center><br>
+    <p>Good Friday holds solemn significance in the Christian calendar, as it commemorates the crucifixion and death of
+      Jesus Christ. It is a day for believers to engage in prayer, meditation, and introspection, contemplating the
+      profound sacrifice made by Christ for the salvation of humanity. Good Friday serves as a poignant reminder of the
+      enduring power of faith and the depth of Christ's love for humanity.</p>
+  </div>
+  <center>
+    <button id="showa" class="btn btn-primary">Read more</button>
+  </center><br><br>
+  <div class="about">
+    <div class="content1">
+      <h2 data-aos="zoom-in">About Us</h2>
+      <p data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Nesciunt, minima.</p>
+      <center>
+        <a href="about.html"><button class="btn btn-primary">About Us</button></a>
+      </center>
+    </div>
+  </div>
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </section>
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <img src="images/logo1.png" alt="" style="width: 150px;height: 80px;">
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Religions
+            </h6>
+            <p>
+              <a href="muslim-religion.html" class="text-reset">Muslim-Religion</a>
+            </p>
+            <p>
+              <a href="hindu-religion.html" class="text-reset">Hindu-Religion</a>
+            </p>
+            <p>
+              <a href="christian-religion.html" class="text-reset">Christian-Religion</a>
+            </p>
+            <p>
+              <a href="sikh-religion.html" class="text-reset">Sikh-Religion</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Festivals
+            </h6>
+            <p>
+              <a href="ramdan-festival.html" class="text-reset">Ramadan</a>
+            </p>
+            <p>
+              <a href="holy-festival.html" class="text-reset">Holy</a>
+            </p>
+            <p>
+              <a href="christmas-festival.html" class="text-reset">Christmas</a>
+            </p>
+            <p>
+              <a href="" class="text-reset">Eid-Ul-Fitr</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              festoculture@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2023 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">FestoCulture.com</a>
+    </div>
+  </footer>
+  <script>
+    $(document).ready(function(){
+      $ (window).scroll(function(){
+        if($(window).scrollTop()>1){
+          $("nav").css("background-color","lightgrey");
+        }
+        else{
+          $("nav").css("background", "#fff");
+        }
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#show").click(function () {
+        $(".par").toggle("slow");
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#showf").click(function () {
+        $(".par1").toggle("slow");
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#showr").click(function () {
+        $(".ram-content").toggle("slow");
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#showe").click(function () {
+        $(".eid-content").toggle("slow");
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#showa").click(function () {
+        $(".adha-content").toggle("slow");
+      });
+    });
+  </script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

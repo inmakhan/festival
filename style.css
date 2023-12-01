@@ -1,0 +1,26 @@
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-body img {
+  min-width: 50%;
+  max-height: 200px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 70vh;
+  background-image: linear-gradient(rgb(31, 29, 29));
+}
+
+.he {
+  font-size: 80px;
+  margin-top: -25%;
+}
+.jaa p a:hover{
+    text-decoration: underline;
+}
+
+
+

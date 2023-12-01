@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="icon" type="image" href="images/favicon.png.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" ? />
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@400;500;700&family=Quicksand:wght@700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+    <style>
+      .nav-item::after {
+      content: "";
+      width: 0;
+      height: 3px;
+      background-color: #3366FF;
+      margin: auto;
+      display: block;
+    }
+
+    .nav-item:hover::after {
+      width: 100%;
+      transition: width 0.3s linear;
+    }
+
+    #customerNameEmail {
+      align-self: flex-start;
+      /* To align the name and email to the left */
+    }
+
+    .id {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .large-icon {
+      margin-left: 75px;
+      width: 40px;
+    }
+
+    .navbar {
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #fff;
+      font-size: 21px;
+      margin-left: 10px;
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav-link:hover{
+      color: #fff;
+    }
+
+    .list-group p a {
+      font-size: 20px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .list-group p:hover {
+      text-decoration: none;
+    }
+
+    .navbar-brand img {
+      width: 50px;
+      height: 60px;
+    }
+     .w1{
+      color: #3399FF;
+    }
+     .w2{
+      color: #009933;
+    }
+     .w3{
+      color: red;
+    }
+     .w4{
+      color: hotpink;
+    }
+     .w5{
+      color: #FF6600;
+    }
+    /* chat */
+    #chat-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #0F4229;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  font-size: 24px;
+  transition: background-color 0.3s;
+}
+
+#chat-icon:hover {
+  background-color: #072a19;
+}
+
+#chat-container {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 340px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+#chat-header {
+  background-color: #0F4229;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+#chat-display {
+  height: 400px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+#user-input {
+  width: 75%;
+  padding: 10px 0 10px 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  margin-left: 5px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.524);
+}
+
+#send-btn {
+  width: 63px;
+  height: 40px;
+  background-color: #0F4229;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+  background-color: #059652;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.user-message {
+    max-width: 70%;
+    background-color: #e9ebee;
+    color: #000;
+    padding: 12px 15px;
+    margin-left: 100px;
+    border-radius: 20px 20px 0 20px;
+}
+
+.bot-message {
+  max-width: 70%;
+  background-color: #0F4229;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 20px 20px 20px 0;
+}
+
+#question2-btn {
+  max-width: 70%;
+  background-color: #e9ebee;
+  color: #000;
+  padding: 7px;
+  border-radius: 20px 20px 0 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#question1-btn {
+  max-width: 70%;
+  background-color: #e9ebee;
+  color: #000;
+  padding: 8px;
+  border-radius: 20px 20px 0 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.wel {
+  max-width: 70%;
+  background-color: #0F4229;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 20px 20px 20px 0;
+}
+
+
+/* Responsive Adjustments */
+
+@media only screen and (max-width: 768px) {
+  #chat-icon {
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  #chat-container {
+    right: 10px;
+    bottom: 70px;
+    width: 280px;
+  }
+
+  #chat-display {
+    height: 300px;
+  }
+
+  #user-input {
+    width: 70%;
+  }
+
+  #send-btn {
+    width: 60px;
+  }
+
+  .wel {
+    max-width: 85%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #chat-icon {
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  #chat-container {
+    right: 10px;
+    bottom: 50px;
+    width: 367px;
+  }
+
+  #chat-display {
+    height: 350px;
+  }
+
+  #user-input {
+    width: 70%;
+  }
+
+  #send-btn {
+    width: 82px;
+  }
+
+  .wel {
+    max-width: 90%;
+  }
+}
+/* chat */
+#chat-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #0F4229;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  font-size: 24px;
+  transition: background-color 0.3s;
+}
+
+#chat-icon:hover {
+  background-color: #072a19;
+}
+
+#chat-container {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 340px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+#chat-header {
+  background-color: #0F4229;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+#chat-display {
+  height: 400px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+#user-input {
+  width: 75%;
+  padding: 10px 0 10px 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  margin-left: 5px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.524);
+}
+
+#send-btn {
+  width: 63px;
+  height: 40px;
+  background-color: #0F4229;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+  background-color: #059652;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.user-message {
+    max-width: 70%;
+    background-color: #e9ebee;
+    color: #000;
+    padding: 12px 15px;
+    margin-left: 100px;
+    border-radius: 20px 20px 0 20px;
+}
+
+.bot-message {
+  max-width: 70%;
+  background-color: #0F4229;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 20px 20px 20px 0;
+}
+
+#question2-btn {
+  max-width: 70%;
+  background-color: #e9ebee;
+  color: #000;
+  padding: 7px;
+  border-radius: 20px 20px 0 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#question1-btn {
+  max-width: 70%;
+  background-color: #e9ebee;
+  color: #000;
+  padding: 8px;
+  border-radius: 20px 20px 0 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.wel {
+  max-width: 70%;
+  background-color: #0F4229;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 20px 20px 20px 0;
+}
+
+
+/* Responsive Adjustments */
+
+@media only screen and (max-width: 768px) {
+  #chat-icon {
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  #chat-container {
+    right: 10px;
+    bottom: 70px;
+    width: 280px;
+  }
+
+  #chat-display {
+    height: 300px;
+  }
+
+  #user-input {
+    width: 70%;
+  }
+
+  #send-btn {
+    width: 60px;
+  }
+
+  .wel {
+    max-width: 85%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #chat-icon {
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  #chat-container {
+    right: 10px;
+    bottom: 50px;
+    width: 367px;
+  }
+
+  #chat-display {
+    height: 350px;
+  }
+
+  #user-input {
+    width: 70%;
+  }
+
+  #send-btn {
+    width: 82px;
+  }
+
+  .wel {
+    max-width: 90%;
+  }
+}
+/* chat */
+#chat-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #0F4229;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  font-size: 24px;
+  transition: background-color 0.3s;
+}
+
+#chat-icon:hover {
+  background-color: #072a19;
+}
+
+#chat-container {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 340px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+#chat-header {
+  background-color: #0F4229;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+#chat-display {
+  height: 400px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+#user-input {
+  width: 75%;
+  padding: 10px 0 10px 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  margin-left: 5px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.524);
+}
+
+#send-btn {
+  width: 63px;
+  height: 40px;
+  background-color: #0F4229;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+  background-color: #059652;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.user-message {
+    max-width: 70%;
+    background-color: #e9ebee;
+    color: #000;
+    padding: 12px 15px;
+    margin-left: 100px;
+    border-radius: 20px 20px 0 20px;
+}
+
+.bot-message {
+  max-width: 70%;
+  background-color: #0F4229;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 20px 20px 20px 0;
+}
+
+#question2-btn {
+  max-width: 70%;
+  background-color: #e9ebee;
+  color: #000;
+  padding: 7px;
+  border-radius: 20px 20px 0 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#question1-btn {
+  max-width: 70%;
+  background-color: #e9ebee;
+  color: #000;
+  padding: 8px;
+  border-radius: 20px 20px 0 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.wel {
+  max-width: 70%;
+  background-color: #0F4229;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 20px 20px 20px 0;
+}
+
+
+/* Responsive Adjustments */
+
+@media only screen and (max-width: 768px) {
+  #chat-icon {
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  #chat-container {
+    right: 10px;
+    bottom: 70px;
+    width: 280px;
+  }
+
+  #chat-display {
+    height: 300px;
+  }
+
+  #user-input {
+    width: 70%;
+  }
+
+  #send-btn {
+    width: 60px;
+  }
+
+  .wel {
+    max-width: 85%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #chat-icon {
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  #chat-container {
+    right: 10px;
+    bottom: 50px;
+    width: 367px;
+  }
+
+  #chat-display {
+    height: 350px;
+  }
+
+  #user-input {
+    width: 70%;
+  }
+
+  #send-btn {
+    width: 82px;
+  }
+
+  .wel {
+    max-width: 90%;
+  }
+}
+    /* chat */
+    </style>
+
+</head>
+
+<body>
+ <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html"><img src="images/icon.png" alt="">
+        <h2> <span class="w1">F</span><span class="w2">E</span><span class="w3">S</span><span class="w4">T</span><span
+            class="w5">O</span></h2>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa-solid fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="home.html">Home</a>
+          </li>
+          <li class="nav-item dropdown position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+              aria-expanded="false">
+              Religions
+            </a>
+            <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown" style="
+                                border-top-left-radius: 0;
+                                border-top-right-radius: 0;
+                              ">
+              <div class="container">
+                <div class="row my-4">
+                  <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="list-group list-group-flush">
+                      <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                        <a href="Muslim Page.html" style="color: green;"><b>Muslim's
+                            Religion</b></a>
+                      </p>
+                      <a href="Muslim Page.html #m-fes" class="list-group-item list-group-item-action"
+                        style="font-size: 19px;color: green;"><b>Festival's</b></a>
+                      <a href="ramdan.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Ramadan</b></a>
+                      <a href="eid.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Eid-ul-Fitr</b></a>
+                      <a href="bakra.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Eid-ul-Adha</b></a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="list-group list-group-flush">
+                      <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                        <a href="Hindu Page.html" style="color: red;"><b>Hindu's
+                            Religion</b></a>
+                      </p>
+                      <a href="Hindu Page.html #h-fes" class="list-group-item list-group-item-action"
+                        style="font-size: 19px;color: red;"><b>Festival's</b></a>
+                      <a href="holi.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Holy</b></a>
+                      <a href="diwali.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Diwali</b></a>
+                      <a href="navratri.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Navratri</b></a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                    <div class="list-group list-group-flush">
+                      <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                        <a href="Christian.html" style="color: purple;"><b>Christian
+                            Religion</b></a>
+                      </p>
+                      <a href="Christian.html #c-fes" class="list-group-item list-group-item-action"
+                        style="font-size: 19px;color: purple;"><b>Festival's</b></a>
+                      <a href="chris-fes.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Christmas</b></a>
+                      <a href="easter-fes.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Easter</b></a>
+                      <a href="good-fes.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Good Friday</b></a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3">
+                    <div class="list-group list-group-flush">
+                      <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                        <a href="Sikh Page.html" style="color: #FF6600;"><b>Sikhism
+                            Religion</b></a>
+                      </p>
+                      <a href="Sikh Page.html #s-fes" class="list-group-item list-group-item-action"
+                        style="font-size: 19px;color: #FF6600;"><b>Festival's</b></a>
+                      <a href="gur-fes.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>guru</b></a>
+                      <a href="gobin-fes.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Gobin</b></a>
+                      <a href="vai-fes.html" class="list-group-item list-group-item-action"
+                        style="color: #000;font-size: 17px;"><b>Vaisakhi</b></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cont.html">Contact</a> 
+          </li>
+        </ul>
+
+        <!-- login user id -->
+        <span class="id" id="userSection">
+          <div id="customerInfo" class="d-flex flex-column align-items-start">
+            <div class="d-flex align-items-center">
+              <div id="userInfoDiv">
+                <a href="#" id="customerLink"></a>
+              </div>
+              <div id="userIconDiv">
+                <a href="login.html" id="userIconLink">
+                  <img src="./Contact page image/profile_3135715.png" alt="User" width="40px">
+                </a>
+              </div>
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+  </nav>
+ 
+  <section>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/banner1 (1).jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption  d-md-block">
+          <h5 class="he" data-aos="fade-right" data-aos-duration="1000">About <span class="text-primary">Us</span></h5>
+
+        </div>
+      </div>
+  </section>
+
+
+  <header>
+
+    <section class="about my-5">
+      <div class="container ">
+
+        <divc class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6 col-12" data-aos="zoom-in" data-aos offset="200">
+            <h1>What do you know <span class="text-primary">Muslims Event's Festival</span></h1>
+            <p class="p-2"><b>Muslims Eid-ul-Adha:</b> (from Arabic المسلمون (al-Muslimūn) 'submitters [to God]')[27]
+              are people who adhere to Islam, a monotheistic religion belonging to the Abrahamic tradition. They
+              consider the Quran, the foundational religious text of Islam, to be the verbatim word of the God of
+              Abraham.</p>
+
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <h4 style="font-size: small;">Both Eid al-Fitr and Eid al-Adha follow a period of 10 holy days or
+                  nights:
+                  the last 10 nights of Ramadan (Eid al-Fitr), and the first 10 days of Dhu al-Hijjah (Eid al-Adha). The
+                  Night of Power, one of the last 10 nights of Ramadan, is the holiest night of the year. </h4>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+              aria-expanded="false" aria-controls="collapseExample">
+              Read more
+            </button>
+            <br>
+
+
+            <div class="accordion" id="accordionExample" data-aos="zoom-in-left" data-aos offset="200" data-aos-duration="2000" data-aos-once="true" >
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <b> Holidays</b>
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Eid al-Fitr is celebrated at the end of Ramadan .</strong>
+                    (a month of fasting during daylight hours), and Muslims may perform acts of zakat (charity) on the
+                    occasion,<br> which begins after the new moon is sighted for the beginning
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <b>Eid al-Adha</b>
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong> Eid al-Adha follow a period of 10 holy days or nights.</strong>
+                    the last 10 nights of Ramadan (Eid al-Fitr), and the first 10 days of Dhu al-Hijjah (Eid al-Adha).
+                    the Day of Arafah, the day before Eid al-Adha, is the holiest day of the Islamic year.
+                    The Night of Power, one of the last 10 nights of Ramadan, is the holiest night of the year.
+                    Conversely,
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <b>Eid al-Fitr</b>
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>holidays celebrated within Islam.</strong>
+                    While the Qur'an does not mention the celebration of Eid, the religious holiday of
+                    Eid al-Fitr is celebrated by Muslims worldwide because it marks
+                    the end of the month-long dawn-to-sunset fasting of Ramadan. Some Muslims, however,
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 col-12 m-auto text-end" data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000" data-aos-once="true">
+            <a href="Muslim Page.html"><img src="images/team4 (1).jpg" class="img-fluid img-thumbnail shadow p-3 mb-5 bg-body rounded box"></a>
+
+          </div>
+      </div>
+      </div>
+    </section>
+  </header>
+
+  <header>
+
+    <section class="about my-5">
+      <div class="container ">
+
+        <div class="row">
+
+          <div class="col-sm-12 col-md-6 col-lg-6 col-12" data-aos="zoom-in" data-aos offset="200" data-aos-duration="1000" data-aos-once="true">
+            <h1>What do you know <span class="text-warning">Hindu Event's Festival </span></h1>
+
+            <p class="p-2"><b>Lathmar Holi:</b> (Holi of sticks) is a Hindu festival celebrated in the twin towns of
+              Barsana and Nandgaon, also known as the towns of Radha and Krishna respectively. Every year, during the
+              period of Holi, thousands of devotees and tourists visit these towns to celebrate the festival.[1][2] The
+              festivities usually last for more than a week and ends on Rang Panchami.[3][4]</p>
+
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <h5 style="font-size: small;">Associated with legend that is linked to the divine couple Radha Krishna,
+                  the
+                  festival seeks to recreate it. According to the legend, Lord Krishna who was resident of Nandgaon and
+                  considered as the son-in-law of Vrishabhanu wanted to spray the colors on his bel</h5>
+
+              </div>
+            </div>
+
+
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+              aria-expanded="false" aria-controls="collapseExample">
+              Read more
+            </button>
+
+
+            <div class="accordion" id="accordionExample" data-aos="zoom-in-left" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <b>Radha Krishna Holi Day</b>
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong> Krishna who was resident of Nandgaon</strong>
+                    Vrishabhanu wanted to spray the colors on his beloved Radha and her friends.
+                    But, as Krishna and his friends entered Barsana, they were playfully greeted with the sticks
+                    by Radha and her friends who drove them out of Barsana.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <b>Lathmar Holi</b>
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>(Holi of sticks) is a Hindu festival Holi Day.</strong>
+                    celebrated in the twin towns of Barsana and Nandgaon,
+                    also known as the towns of Radha and Krishna
+                    respectively. Every year, during the period of Holi,
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <b>Nandgaon</b>
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong> nagar panchayat in Mathura district in the Indian state.</strong>
+                    Uttar Pradesh. Nandgaon is a religious centre in Braj region.
+                    It is believed that Krishna in his childhood resided in Nandgaon with his family.
+                    Nandgaon was named after Nand Baba, father of Krishna. and there are lots of famous temple related
+                    to lord Krishna
+                    times, the Ancient temple is Lord Narsimha Dev. when Nand
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-6 col-12 m-auto text-end" data-aos="flip-left" data-aos-offset="200" data-aos-duration="1000" data-aos-once="true">
+            <a href="Hindu Page.html"><img src="images/holi...jpg" class="img-fluid img-thumbnail shadow p-3 mb-5 bg-body rounded"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <header>
+
+    <section class="about my-5">
+      <div class="container ">
+
+        <divc class="row">
+
+          <div class="col-sm-12 col-md-6 col-lg-6 col-12" data-aos="zoom-in" data-aos offset="200" data-aos-duration="1000" data-aos-once="true">
+            <h1>What do you know <span class="text-danger">Cristian Event's Festival</span></h1>
+
+            <p class="p-2"><b>Christmas is an annual festival:</b> commemorating the birth of Jesus Christ, observed
+              primarily on December 25[a] as a religious and cultural celebration among billions of people around the
+              world.[2][3][4] A feast central to the Christian liturgical year, it is preceded by the season of Advent
+              or the Nativity Fast and initiates the season of Christmastide, which historically in the West lasts </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <h3 style="font-size: small;">twelve days and culminates on Twelfth Night.[5] Christmas Day is a public
+                  holiday in many countries,[6][7][8] is celebrated religiously by a majority of Christians,[9] as well
+                  as
+                  culturally by many non-Christians,</h3>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+              aria-expanded="false" aria-controls="collapseExample">
+              Read more
+            </button>
+
+
+            <div class="accordion" id="accordionExample" data-aos="zoom-in-left" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <b>Christmas</b>
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong> liturgical year, also called the church year.</strong>
+                    The liturgical year, also called the church year, Christian year or kalendar,
+                    consists of the cycle of liturgical seasons in Christian churches that determines when feast
+                    consists of the cycle of liturgical seasons in Christian churches that determines when feast and
+                    which portions of Scripture are to be read either in an annual cycle or in a cycle of several y
+                    and which portions of Scripture are to be read either in an annual cycle or in a cycle of several y
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <b>Eastern Christianity</b>
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Eastern Christianity comprises Christian.</strong>
+                    Christian traditions and church families that originally developed during classical
+                    and late antiquity in Western Asia, Asia Minor, Eastern Europe, Southeastern Europe,
+                    the Caucasus, Northeast Africa, the Fertile Crescent Andrew
+                    the Malabar coast of South Asia, and ephemerally parts of
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <b>Christmas, Saint Nicholas</b>
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Saint Nicholas of Myra, also known as Nicholas of Bari.</strong>
+                    an early Christian bishop of Greek descent from the maritime city of Myra in Asia Minor during the
+                    time of the Roman Empire. Because of the many miracles attributed to his intercession, he is also
+                    known as Nicholas the Wonderworker.
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-6 col-12 m-auto text-end" data-aos="flip-up" data-aos-offset="200" data-aos-duration="1000" data-aos-once="true">
+            <a href="Christian.html"><img src="images/crist...jpg" class="img-fluid img-thumbnail shadow p-3 mb-5 bg-body rounded"></a>
+          </div>
+      </div>
+      </div>
+    </section>
+  </header>
+
+
+  <header>
+
+    <section class="about my-5">
+      <div class="container">
+
+        <divc class="row">
+
+          <div class="col-sm-12 col-md-6 col-lg-6 col-12" data-aos="zoom-in" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+            <h1>What do you know <span class="text-success">Sikhism's Event's Festival</span></h1>
+
+            <p class="p-2"> <b>Sikhism Festival:</b> Gurū Nānak, also referred to as Bābā Nānak, was the founder of
+              Sikhism and is the first of the ten Sikh Gurus. His birth is celebrated as Guru Nanak Gurpurab on Katak
+              Pooranmashi, i.e. October–November. </p>
+
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <h6 style="font-size: small;">Sikhism developed from the spiritual teachings of Guru Nanak (1469–1539),
+                  the
+                  faith's first guru,[22][23] and the nine Sikh gurus who succeeded him. The tenth guru, Gobind Singh
+                  (1666–1708), named the Sikh scripture Guru Granth Sahib as his successor, bringing to a close the line
+                  of
+                  human gurus and establishing the scripture as the 11th and last eternally living guru, </h6>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+              aria-expanded="false" aria-controls="collapseExample">
+              Read more
+            </button>
+
+
+
+            <div class="accordion" id="accordionExample" data-aos="zoom-in" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <b>Guru Hargobind Ceremony</b>
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Kathina Ceremony (Robe Offering Ceremony).</strong>
+                    The Kathina is held on any convenient date within one month of the conclusion of the three month
+                    rains retreat season (Vassa) for the monastic order. It is the time of the year when new robes and
+                    other requisites may be offered by the laity to the monks and nuns.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <b>Religious persecution Festival</b>
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Buddha used the example of a wild elephant.</strong>
+                    which, when it is caught, is harnessed to a tame one to train. In the same way, he said, a person
+                    new to Buddhism should have a special friendship of an older Buddhist. To mark this saying, Thais
+                    hold an elephant festival on the third Saturday in November.
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <b>Guru Angad Festival </b>
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Kandy is a beautiful city in Sri Lanka.</strong>
+                    On a small hill is a great temple which was especially built to house a relic of the Buddha - his
+                    tooth. The tooth can never be seen, as it is kept deep inside many caskets. But once a year in
+                    August, on the night of the full moon, there is a special procession for it.
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-6 col-12 m-auto text-end" data-aos="zoom-in" data-aos-offset="200" data-aos-duration="1000" data-aos-once="true">
+            <a href="Sikh Page.html"><img src="images/budh...jpg" class="img-fluid img-thumbnail shadow p-3 mb-5 bg-body rounded"></a>
+          </div>
+      </div>
+      </div>
+    </section>
+  </header>
+
+
+  <section class="team py-5 text-center">
+    <div class="container ">
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card shadow p-3 mb-5 bg-body rounded" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-once="true">
+            <div class="card-body">
+              <img src="images/card...jpg" class="img-fluid rounded-circle border border-primary p-2">
+              <h5 class="card-title "><b>Happy Cristmas</b></h5>
+              <p class="card-text">Front and developer</p>
+              <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card shadow p-3 mb-5 bg-body rounded" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-once="true">
+            <div class="card-body">
+              <img src="images/card2...jpg" class="img-fluid rounded-circle border border-primary p-2">
+              <h5 class="card-title"><b>Eid-ul-Fitar</b></h5>
+              <p class="card-text">With supporting text</p>
+              <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="card shadow p-3 mb-5 bg-body rounded" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-once="true">
+            <div class="card-body">
+              <img src="images/holi...jpg" class="img-fluid rounded-circle border border-primary p-2">
+              <h5 class="card-title"><b>Holi Day</b></h5>
+              <p class="card-text">With supporting text </p>
+              <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <footer class="text-center text-lg-start" style="background-color: #000; color: #fff;">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-center p-4 border-bottom">
+      <!-- Left -->
+  
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <!-- Facebook -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href=" https://www.facebook.com"
+          target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
+  
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href=" https://www.twitter.com"
+          target="_blank" role="button"><i class="fab fa-twitter"></i></a>
+  
+        <!-- Google -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href=" https://www.google.com"
+          target="_blank" role="button"><i class="fab fa-google"></i></a>
+  
+        <!-- Instagram -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href=" https://www.instagram.com"
+          target="_blank" role="button"><i class="fab fa-instagram"></i></a>
+  
+        <!-- Linkedin -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href=" https://www.linkedin.com"
+          target="_blank" role="button"><i class="fab fa-linkedin-in"></i></a>
+        <!-- Github -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href=" https://www.github.com"
+          target="_blank" role="button"><i class="fab fa-github"></i></a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="jaa">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4" style="font-size: 30px;">
+              <img src="images/icon.png" style="width: 50px; height: 60px;" class="w-55">
+              <span class="w1">F</span><span class="w2">E</span><span class="w3">S</span><span class="w4">T</span><span class="w5">O</span>
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Religions
+            </h6>
+            <p>
+              <a href="muslim-religion.html"  class="text-reset">Muslim-Religion</a>
+            </p>
+            <p>
+              <a href="hindu-religion.html" class="text-reset">Hindu-Religion</a>
+            </p>
+            <p>
+              <a href="christian-religion.html" class="text-reset">Christian-Religion</a>
+            </p>
+            <p>
+              <a href="sikh-religion.html" class="text-reset">Sikh-Religion</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Festivals
+            </h6>
+            <p>
+              <a href="ramdan-festival.html" class="text-reset">Ramadan</a>
+            </p>
+            <p>
+              <a href="holy-festival.html" class="text-reset">Holy</a>
+            </p>
+            <p>
+              <a href="christmas-festival.html" class="text-reset">Christmas</a>
+            </p>
+            <p>
+              <a href="" class="text-reset">Eid-Ul-Fitr</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i>Aptech Choaching Center</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              festoeventure@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4 bg-primary text-white">
+      © 2023 Copyright:
+      <a class=" fw-bold text-white" href="#">FestoEventure.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  <div  id="chat-icon" onclick="toggleChatbot()"><i class="fas fa-comment-dots"></i></div>
+
+<div id="chat-container" style="display: none;">
+  <div id="chat-header">LIVE CHAT</div>
+  <div id="chat-display">
+    <p class="wel" >Welcome to the Plant Palace How can i help?</p>
+   
+  </div>
+  <div>
+  <input type="text" id="user-input" placeholder="Type your message..."><button id="send-btn">Send</button>
+  
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+const chatDisplay = document.getElementById('chat-display');
+const userInput = document.getElementById('user-input');
+const sendBtn = document.getElementById('send-btn');
+
+function sendMessage() {
+  const userMessage = userInput.value.trim();
+  if (userMessage !== '') {
+    displayMessage(userMessage, 'user');
+    getBotResponse(userMessage);
+    userInput.value = '';
+  }
+}
+
+// Event listener for clicking the send button
+sendBtn.addEventListener('click', sendMessage);
+
+// Event listener for pressing the "Enter" key
+userInput.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    sendMessage();
+  }
+});
+
+function displayMessage(message, sender) {
+const messageWrapper = document.createElement('div');
+messageWrapper.className = 'chat-message';
+messageWrapper.classList.add(sender + '-message');
+messageWrapper.textContent = message;
+chatDisplay.appendChild(messageWrapper);
+chatDisplay.scrollTop = chatDisplay.scrollHeight;
+}
+
+function getBotResponse(userMessage) {
+let botMessage = '';
+
+if (userMessage.toLowerCase().includes('Hello! how are you')) {
+  botMessage = "Hello! I'm fine, thank you!";
+} else if (userMessage.toLowerCase().includes('hey')) {
+    botMessage = "hello! how can i help you";
+}else if (userMessage.toLowerCase().includes('religions pictures')) {
+  botMessage = "Check out our gallery mention in navigation bar";
+} else if (userMessage.toLowerCase().includes('i want blog on muslim religion')) {
+  botMessage = "go on religion on navbar and click on muslim religion";
+} else if (userMessage.toLowerCase().includes('help me')) {
+  botMessage = "Sure, I can assist you. How can I help?";
+} else if (userMessage.toLowerCase().includes('tell me something about your website')) {
+  botMessage = "You need to Navigate to the about page";
+}else if (userMessage.toLowerCase().includes('contact?')) {
+    botMessage = "You need to Navigate to the contact page";
+}else if (userMessage.toLowerCase().includes('about')) {
+    botMessage = "You need to Navigate to the about page";
+}else if (userMessage.toLowerCase().includes('this is bloging website')) {
+    botMessage = "yes this is the bloging website for festivals and religions";
+}else {
+  botMessage = 'You said: "' + userMessage + '". That sounds interesting!';
+}
+
+setTimeout(function() {
+  displayMessage(botMessage, 'bot');
+}, 500);
+}
+
+// Additional code for predefined questions
+const question1Btn = document.getElementById('question1-btn');
+const question2Btn = document.getElementById('question2-btn');
+
+question1Btn.addEventListener('click', function() {
+const question1 = question1Btn.textContent;
+displayMessage(question1, 'user');
+getBotResponse(question1);
+});
+
+question2Btn.addEventListener('click', function() {
+const question2 = question2Btn.textContent;
+displayMessage(question2, 'user');
+getBotResponse(question2);
+});
+});
+
+let chatbotVisible = false;
+
+function toggleChatbot() {
+const chatContainer = document.getElementById('chat-container');
+chatContainer.style.display = chatbotVisible ? 'none' : 'block';
+chatbotVisible = !chatbotVisible;
+}
+
+/**
+ * Animation on scroll function and init
+ */
+function aosInit() {
+  AOS.init({
+    duration: 600,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false
+  });
+}
+window.addEventListener('load', aosInit);
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 10) {
+          $("nav").css("background-color", "black");
+          $(".nav-link").css("color", "#fff");
+        }
+        else {
+          $("nav ").css("background", "transparent");
+          $(".nav-link").css("color", "#fff");
+        }
+      });
+    });
+  </script>
+
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

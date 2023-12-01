@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+
+  <!-- AOS LIBRARY -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
+
+  <style>
+    .nav-item::after {
+      content: "";
+      width: 0;
+      height: 3px;
+      background-color: #3366FF;
+      margin: auto;
+      display: block;
+    }
+
+    .nav-item:hover::after {
+      width: 100%;
+      transition: width 0.3s linear;
+    }
+
+    #customerNameEmail {
+      align-self: flex-start;
+      /* To align the name and email to the left */
+    }
+
+    .id {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .large-icon {
+      margin-left: 75px;
+      width: 40px;
+    }
+
+    .navbar {
+      background-color: #fff;
+    }
+
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: black;
+      font-size: 21px;
+      margin-left: 10px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .list-group p a {
+      font-size: 20px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .list-group p:hover {
+      text-decoration: none;
+    }
+
+    .navbar-brand img {
+      width: 150px;
+      height: 60px;
+    }
+
+    /* background */
+
+    .hero {
+      width: 100%;
+      color: #000000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url(img/navami...jpg);
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      font-family: 'DM Serif Display', serif;
+      font-family: 'Playfair Display', serif;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+    
+
+    .animation-container {
+    text-align: center;
+    max-width: 100%;
+    padding: 10px;
+}
+
+.animate-text {
+    font-size: 24px;
+    overflow: hidden;
+    border-right: 1px solid #000;
+    white-space: nowrap;
+    animation: typing 3s steps(12, end), bounce 1.5s infinite;
+}
+
+@media (min-width: 768px) {
+    .animate-text {
+        font-size: 20px;
+    }
+}
+@media (min-width: 390px) {
+    .animate-text {
+        font-size: 18px; /* Aap font size ko apni pasand ke hisab se customize kar sakte hain */
+        width: 100%; /* Text wrapping ke liye width ko 100% par set karein */
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+    /* gride */
+/* Default styles for the parent div */
+.parent {
+  background: hsl(60, 15%, 92%);  /* fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #ffffff, #fffc00); */
+/* background: linear-gradient(to right, #ffffff, #fffc00);  */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 10px;
+  font-family: 'DM Serif Display', serif;
+  font-family: 'Playfair Display', serif;
+  margin-top: 30px;
+  height: 1650px;
+  padding: 20px; /* Set the default height to auto */
+
+}
+.parent h1 ,h3{
+  color: rgb(255, 208, 1);
+}
+
+
+/* Media query for smaller screens (e.g., 390x844) */
+@media (max-width: 390px) {
+  .parent {
+    height: 6000px; /* Adjust the height as needed for smaller screens */
+  }
+}
+
+    .div1 {
+      grid-area: 1 / 1 / 2 / 2;
+      margin-left: 10px;
+      margin-top: 30px;
+    }
+
+    .div2 {
+      grid-area: 2 / 1 / 3 / 2;
+      margin-left: 10px;
+    }
+
+    .div3 {
+      grid-area: 1 / 2 / 2 / 3;
+      margin-top: 30px;
+    }
+
+    .div4 {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+
+
+.upcomig h1 {
+  font-weight: 400;
+  text-align: center;
+}
+
+.coming-section {
+  margin-top: 10px;
+  width: 100%;
+  height: 200px;
+  background-color: #e4e4e4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upcomig h1 {
+  font-family: sans-serif;
+  color: #555;
+}
+
+.photo-container {
+  font-size: 1.5em;
+  background-color: #2c3e52;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  grid-area: photo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-container {
+  margin: 10px;
+  display: grid;
+  grid-template-areas: 
+    'photo info';
+  grid-template-columns: 150px 1fr;
+  width: 500px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  line-height: 1.75em;
+}
+.info-container {
+  padding: 20px;
+  grid-area: info;
+}
+.event-name {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.event-location {
+  font-weight: 300;
+}
+.day {
+  font-weight: 300;
+}
+.month {
+  font-weight: 600;
+}
+
+@media( max-width: 600px ) {
+  .card-container {
+    width: auto;
+  }
+}
+  </style>
+
+</head>
+
+<body>
+  
+  <div class="background">
+    <div class="hero">
+      <div class="hero__title">
+        <h1>Ram Navami Blogs</h1>
+      </div>
+      <div class="animation-container">
+       <p class="animate-text">"Welcome! You've arrived at my blog, where you'll find a blend of knowledge and empathy on various religions and special events."</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- gride -->
+  <div class="parent">
+    <div class="div1">
+      <blockquote data-aos="fade-down" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+        <h1>Introduction:</h1>
+        <p>Ram Navami, also known as Deepavali, is a significant Hindu festival celebrated by millions of people around the world. It is commonly referred to as the "Festival of Lights" and symbolizes the victory of light over darkness and good over evil. Dussehra usually falls between October and November and lasts for five days. During this time, people Fireworks are also a common part of the celebrations. Durga Puja holds great cultural and religious importance and is celebrated with enthusiasm and joy by Hindus, Sikhs, Jains, and some Buddhists.
+        </p>
+
+        <h3>The Basics of Ram Navami:</h3>
+        <p>  Ram Navami is typically celebrated in October or November, depending on the lunar calendar. The exact date varies each year. Meaning: Diwali signifies the victory of light over darkness and good over evil. It is a time to celebrate the triumph of knowledge, hope, and positivity. Lighting: Diwali is often called the "Festival of Lights" because people illuminate their homes with diyas (oil lamps), candles, and decorative lights. This symbolizes the triumph of light over darkness.</p>
+
+
+         
+
+        <h3>Spiritual Reflection:</h3>
+        <p>During Ram Navami, people often engage in prayers, meditation, and religious rituals to seek blessings and guidance from deities. They visit temples and offer prayers to deities such as Lord Rama, Goddess Lakshmi, and Lord Ganesha. These acts of devotion are believed to bring spiritual purification and enlightenment.Diwali also symbolizes the forgive others, and cultivate positive qualities such as love, compassion, and gratitude.</p>
+
+          
+
+        <h3>Fasting and Self-Discipline:</h3>
+        <p>During Ram Navami, people often engage in prayers, meditation, and religious rituals to seek blessings and guidance from deities. They visit temples and offer prayers to deities such as Lord Rama, Goddess Lakshmi, and Lord Ganesha. These acts of devotion are believed to bring spiritual purification and enlightenment.Durga Puja also symbolizes the forgive others, and cultivate positive qualities such as love, compassion, and gratitude.</p>
+
+        <h3>Community and Unity:</h3>
+        <p>Ram Navami, also known as Deepavali, is a significant Hindu festival celebrated by millions of people around the world. It is commonly referred to as the "Festival of Lights" and symbolizes the victory of light over darkness and good over evil. Rakhsha Bhandan usually falls between October and November and lasts for five days. During this time,</p>
+
+        <h3>Charity and Generosity:</h3>
+        <p>Charity and generosity are integral aspects of Ram Navami celebrations. During this festival, people are encouraged to extend their kindness and compassion towards others, especially those in need. The act of giving and sharing is considered a way to express gratitude for one's blessings and to spread joy and happiness.</p>
+
+        <h3>Interfaith Understanding:</h3>
+        <p>Ram Navami, as a festival celebrated by Hindus, Sikhs, Jains, and some Buddhists, provides an opportunity for interfaith understanding and appreciation. It serves as a platform for people from different religious backgrounds to come together, learn about each other's traditions, and foster mutual respect and understanding.
+        </p>
+
+        <h3>Conclusion:</h3>
+        <p>Ram Navami, as a festival celebrated by Hindus, Sikhs, Jains, and some Buddhists, provides an opportunity for interfaith understanding and appreciation. It serves as a platform for people from different religious backgrounds to come together, learn about each other's traditions, and foster mutual respect and understanding.</p>
+      </blockquote>
+    </div>
+
+
+
+    <div class="div3" data-aos="fade-up" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+      <h1>Important Point:</h1>
+      <ul>
+        <li>
+          <h5> Festival of Lights:</h5> The illumination symbolizes the victory of light over darkness and the triumph of good over evil.
+        </li>
+
+        <li>
+          <h5> Religious Significance:</h5>  Ram Navami to mark the release of Guru Hargobind Sahib Ji and other Sikh prisoners from captivity.  Mahavira attained Nirvana (liberation) and achieved moksha (salvation).
+        </li>
+
+        <li>
+          <h5> Celebration of Prosperity:</h5>Ram Navami is associated with wealth and prosperity. It is believed that Goddess Lakshm.
+        </li>
+
+        <li>
+          <h5> Fireworks and Festivities:</h5>  Fireworks are a common part of Ram Navami celebrations. They are believed to ward off evil spirits and bring joy and excitement to the festivities.
+        </li>
+
+        <li>
+          <h5>Social and Family Bonding:</h5> Ram Navami is a time for families to come together and strengthen their bonds. People visit relatives and friends.
+        </li>
+
+        <li>
+          <h5>  Charity and Giving:</h5>Ram Navami emphasizes the importance of charity and giving back to society. Many people donate to the less fortunate,
+        </li>
+
+        <li>
+          <h5>Community and Unity:</h5> Hindus come together for prayers and share Ram Navami meals.
+        </li>
+
+        <li>
+          <h5>Repentance and Reflection:</h5> Ram Navami is a time for self-reflection and seeking forgiveness.
+        </li>
+
+        <li>
+          <h5> Self-Discipline:</h5> Fasting encourages self-control over negative behaviors.
+        </li>
+
+        <li>
+          <h5>Spreading Knowledge:</h5> Educating others about Pongal and  is common.
+        </li>
+
+        <li>
+          <h5>Introspection and Personal Growth:</h5> It's a time for self-improvement and personal growth.
+        </li>
+
+        <li>
+          <h5> Empathy and Compassion:</h5> Fasting fosters empathy for those less fortunate.
+        </li>
+
+        <li>
+          <h5>Gratitude:</h5> Hindus express gratitude for their blessings.
+        </li>
+
+        <li>
+          <h5> Prayer for Others:</h5> Special prayers are offered for the well-being of family and friends.
+        </li>
+
+        <li>
+          <h5>Avoiding Negative Behavior:</h5> Hindus strive to avoid anger, gossip, and harmful actions.
+        </li>
+
+        <li>
+          <h5>Ram Navami Festivals:</h5> Recitation of the Ram Navami is emphasized.
+        </li>
+
+        <li>
+          <h5>Generosity:</h5>Ram Navamiare encouraged to give generously to those in need.
+        </li>
+
+        <li>
+          <h5>Visiting the Mandir:</h5> Many Hindus increase their visits to the mandir during Onam.
+        </li>
+
+        <li>
+          <h5> Cooking Special Dishes:</h5> Special dishes are prepared for festivals and Janmashtami.
+        </li>
+
+        <li>
+          <h5>Family Time:</h5> It's a time for quality family time and strengthened bonds.
+        </li>
+      </ul>
+    </div>
+
+
+
+
+    <div class="div2" data-aos="fade-down" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+      <h1>History Of Ram Navami:</h1>
+      <p>Throughout history,Ram Navami has evolved as a festival that celebrates the victory of light over darkness, knowledge over ignorance, and good over evil. It is a time for people to come together, offer prayers, exchange gifts, and spread joy and happiness. The traditions and customs associated with Ram Navami may vary across different regions and communities, but the underlying message of hope, positivity, and spiritual significance remains constant.
+       
+
+
+
+      </p>
+    </div>
+    <div class="div4" data-aos="fade-up" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+      <h1>About Of Ram Navami:</h1>
+      <p>The word "Ram Navami" is derived from the Sanskrit word "Deepavali," which means "row of lights." The festival is aptly named as it is characterized by the lighting of diyas (oil lamps), candles, and decorative lights, which illuminate homes, streets, and public spaces.
+
+        Ram Navami holds great cultural, religious, and social significance. It is primarily celebrated to commemorate the return of Lord Rama, along with his wife Sita and brother Lakshmana, to their kingdom of Ayodhya after 14 years of exile and the victory of good over evil. This event is described in the ancient Hindu epic, the Ramayana.<br><br>
+
+       <br>
+      </p>
+    </div>
+  </div>
+
+
+
+  <div class="coming-section" data-aos="fade-down" data-aos-once="true">
+    <h1 class="upcomig">Upcoming Events Date</h1>
+    <div class="card-container">
+      <div class="photo-container">
+        <div class="date" id="eventDate">
+          <div class="day" id="day">03</div>
+          <div class="month" id="month">MAR</div>
+        </div>
+        <div class="image"></div>
+      </div>
+      <div class="info-container">
+        <div class="event-name">
+          Pre-Mason Day
+        </div>
+        <div class="event-location">
+          Early celebration in the Corner Pocket
+        </div>
+      </div>
+    </div>
+    </div>
+    
+
+
+
+    <div class="body" data-aos="fade-up" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+      <div class="container">
+        <h1 id="headline">Countdown to Event</h1>
+        <div id="countdown">
+          <ul>
+            <li><span id="days"></span>days</li>
+            <li><span id="hours"></span>Hours</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>Seconds</li>
+          </ul>
+        </div>
+        <div id="content" class="emoji">
+          <span>🥳</span>
+          <span>🎉</span>
+          <span>🎂</span>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+
+  
+  <script>
+  (function () {
+    const second = 1000,
+          minute = second * 60,
+          hour = minute * 60,
+          day = hour * 24;
+  
+    const dayMonth = "03/11/",
+        birthday = dayMonth + "2024";
+  
+    const countDown = new Date(birthday).getTime(),
+        x = setInterval(function() {    
+  
+          const now = new Date().getTime(),
+                distance = countDown - now;
+  
+          document.getElementById("days").innerText = Math.floor(distance / (day));
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour));
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute));
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+  
+          if (distance < 0) {
+            document.getElementById("headline").innerText = "Event Day!";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            clearInterval(x);
+          }
+        }, 0);
+  }());
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+  <!-- <script>
+    (function () {
+    const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+    // Get the date and month from HTML
+    const eventDateElement = document.getElementById("eventDate");
+    const dayValue = eventDateElement.querySelector("#day").innerText;
+    const monthValue = eventDateElement.querySelector("#month").innerText;
+
+    // Construct the birthday string with the current year
+    const currentYear = new Date().getFullYear();
+    const birthday = `${dayValue}/${monthValue}/${currentYear}`;
+
+    const countDownDate = new Date(birthday).getTime();
+
+    const x = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (day));
+        const hours = Math.floor((distance % (day)) / (hour));
+        const minutes = Math. floor((distance % (hour)) / (minute));
+        const seconds = Math.floor((distance % (minute)) / second);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (distance < 0) {
+            document.getElementById("headline").innerText = "Event Day!";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            clearInterval(x);
+        }
+    }, 1000); // Delay time set to 1000 milliseconds (1 second)
+})();
+
+  </script>
+
+
+ -->
+
+<style>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+.body {
+  height: 100%;
+}
+
+.body {
+  margin-top: 30px;
+  align-items: center;
+  background-color: #ffd54f;
+  display: flex;
+  font-family: -apple-system, 
+    BlinkMacSystemFont, 
+    "Segoe UI", 
+    Roboto, 
+    Oxygen-Sans, 
+    Ubuntu, 
+    Cantarell, 
+    "Helvetica Neue", 
+    sans-serif;
+}
+
+.container {
+  color: #333;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#headline h1 {
+  font-weight: normal;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+}
+
+#countdown li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+#countdown li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+.emoji {
+  display: none;
+  padding: 1rem;
+}
+
+.emoji span {
+  font-size: 4rem;
+  padding: 0 .5rem;
+}
+
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: calc(1.5rem * var(--smaller));
+  }
+  
+  li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+  
+  li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+}
+</style>
+
+
+
+
+
+
+<script>
+  AOS.init();
+</script>
+
+
+
+</body>
+
+</html>

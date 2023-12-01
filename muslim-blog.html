@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Muslim Blog</title>
+  <link rel="icon" type="image" href="images/icon.png">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image" href="img/favicon.png.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" ? />
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:wght@400;500;700&family=Quicksand:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet">
+    <style>
+         .nav-item::after {
+      content: "";
+      width: 0;
+      height: 3px;
+      background-color: #3366FF;
+      margin: auto;
+      display: block;
+    }
+
+    .nav-item:hover::after {
+      width: 100%;
+      transition: width 0.3s linear;
+    }
+
+    #customerNameEmail {
+      align-self: flex-start;
+      /* To align the name and email to the left */
+    }
+
+    .id {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .large-icon {
+      margin-left: 75px;
+      width: 40px;
+    }
+
+    .navbar {
+      background-color: #fff;
+    }
+
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: black;
+      font-size: 21px;
+      margin-left: 10px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .list-group p a {
+      font-size: 20px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .list-group p:hover {
+      text-decoration: none;
+    }
+
+    .navbar-brand img {
+      width: 150px;
+      height: 60px;
+    }
+        :root{
+	--main: green ;
+	--darkblue: #362078;
+	--black: #060606;
+	--white: #e7dff4;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: system-ui;
+}
+.clearfix{
+	clear: both;
+}
+header{
+	padding: 20px 0px;
+	box-shadow: 2px 2px 15px var(--black);
+}
+.container{
+	width: 1140px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+.col-div-6{
+	width: 50%;
+	float: left;
+}
+.logo{
+	font-weight: bold;
+	font-size: 25px;
+	color: var(--black);
+}
+.logo span{
+	color: var(--main);
+}
+.nav{
+	float: right;
+}
+.nav li{
+	list-style: none;
+	float: left;
+	padding: 3px 20px;
+}
+.nav li a{
+	text-decoration: none;
+	color: var(--black);
+}
+.nav li button{
+	padding: 7px 15px;
+    background: var(--main);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -5px;
+}
+.banner-section{
+	background: var(--main);
+	height: 400px;
+	overflow: hidden;
+}
+.heading{
+	color: var(--white);
+    font-size: 40px;
+    letter-spacing: 1px;
+    margin-top: 14%;
+}
+.p1{
+	color: white;
+    width: 395px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+.input-box{
+	box-shadow: 1px 7px 8px 0px #222121;
+    width: 360px;
+    border-radius: 50%;
+}
+.input-box input[type="text"]{
+	padding: 9px;
+    width: 265px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+.input-box button{
+	padding: 10px 27px;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    margin-left: -6px;
+    background: var(--darkblue);
+    color: white;
+    cursor: pointer;
+}
+.ban-img{
+	width: 250px;
+	margin-bottom:-50px;
+
+}
+.b-img{
+	width: 100%;
+	border-radius: 10px;
+}
+.heading1{
+	margin-top: 20px;
+	color: var(--main);
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.blog-heading{
+	font-size: 29px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+.text{
+	font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+.name{
+	text-transform: uppercase;
+    font-weight: 600;
+    color: #a1a1a1;
+    font-size: 14px;
+}
+.lr-box{
+	padding: 10px 20px;
+
+}
+.b-img-1{
+	width: 100%;
+	height: 160px;
+	border-radius: 10px;
+	margin-top: 7px;
+}
+.blog-heading-1{
+	font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+.line{
+	    width: 100%;
+	    margin-top: 15px;
+    border: none;
+    height: 1px;
+    background: #ddd;
+}
+.lr-box:hover{
+	cursor: pointer;
+}
+.box-1:hover{
+	cursor: pointer;
+}
+
+.box-2{
+	width: 28.5%;
+	float: left;
+	margin: 25px;
+}
+.box-2:hover{
+	cursor: pointer;
+}
+.foot-section{
+	background: var(--main);
+}
+.foot-inner{
+	width: 500px;
+	margin: 0 auto;
+	padding: 50px;
+	text-align: center;
+}
+.ibox2{
+	margin: 0 auto;
+	width: 380px;
+}
+/* .dis{
+  display: none;
+} */
+button {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ outline: none;
+ border: 0;
+ vertical-align: middle;
+ text-decoration: none;
+ background: transparent;
+ padding: 0;
+ font-size: inherit;
+ font-family: inherit;
+}
+
+button.learn-more {
+ width: 10rem;
+ height: auto;
+}
+
+button.learn-more .circle {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: relative;
+ display: block;
+ margin: 0;
+ width: 3rem;
+ height: 3rem;
+ background: #282936;
+ border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ left: 0.625rem;
+ width: 1.125rem;
+ height: 0.125rem;
+ background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+ position: absolute;
+ content: "";
+ top: -0.29rem;
+ right: 0.0625rem;
+ width: 0.625rem;
+ height: 0.625rem;
+ border-top: 0.125rem solid #fff;
+ border-right: 0.125rem solid #fff;
+ transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+ transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ padding: 0.75rem 0;
+ margin: 0 0 0 1.85rem;
+ color: #282936;
+ font-weight: 700;
+ line-height: 1.6;
+ text-align: center;
+ text-transform: uppercase;
+}
+
+button:hover .circle {
+ width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+ background: #fff;
+ transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+ color: #fff;
+} 
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="home.html"><img src="images/logo1.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fa-solid fa-bars"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown position-static">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+                  aria-expanded="false">
+                  Religions
+                </a>
+                <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown" style="
+                                border-top-left-radius: 0;
+                                border-top-right-radius: 0;
+                              ">
+                  <div class="container">
+                    <div class="row my-4">
+                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                        <div class="list-group list-group-flush">
+                          <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                            <a href="muslim-blog.html" style="color: green;"><b>Muslim's
+                                Religion</b></a>
+                          </p>
+                          <a href="" class="list-group-item list-group-item-action"
+                            style="font-size: 19px;color: green;"><b>Festival's</b></a>
+                          <a href="muslim-blog.html #ramzan-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Ramadan</b></a>
+                          <a href="muslim-blog.html #eid-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Eid-ul-Fitr</b></a>
+                          <a href="muslim-blog.html #adha-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Eid-ul-Adha</b></a>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                        <div class="list-group list-group-flush">
+                          <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                            <a href="hindu-blog.html" style="color: red;"><b>Hindu's
+                                Religion</b></a>
+                          </p>
+                          <a href="" class="list-group-item list-group-item-action"
+                            style="font-size: 19px;color: red;"><b>Festival's</b></a>
+                          <a href="hindu-blog.html #holy-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Holy</b></a>
+                          <a href="hindu-blog.html #diwali-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Diwali</b></a>
+                          <a href="hindu-blog.html #navratri-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Navratri</b></a>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                        <div class="list-group list-group-flush">
+                          <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                            <a href="christian-blog.html" style="color: purple;"><b>Christian
+                                Religion</b></a>
+                          </p>
+                          <a href="" class="list-group-item list-group-item-action"
+                            style="font-size: 19px;color: purple;"><b>Festival's</b></a>
+                          <a href="christian-blog.html #christmas-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Christmas</b></a>
+                          <a href="christian-blog.html #easter-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Easter</b></a>
+                          <a href="christian-blog.html #good-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Good Friday</b></a>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-lg-3">
+                        <div class="list-group list-group-flush">
+                          <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                            <a href="sikh-blog.html" style="color: #FF6600;"><b>Sikhism
+                                Religion</b></a>
+                          </p>
+                          <a href="" class="list-group-item list-group-item-action"
+                            style="font-size: 19px;color: #FF6600;"><b>Festival's</b></a>
+                          <a href="sikh-blog.html #guru-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Guru Nanak</b></a>
+                          <a href="sikh-blog.html #bai-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Baisakhi</b></a>
+                          <a href="sikh-blog.html #vai-id" class="list-group-item list-group-item-action"
+                            style="color: #000;font-size: 17px;"><b>Vaisakhi</b></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cont.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./login.html#sign-in" target="_blank">Login</a>
+              </li>
+              <!-- login user id -->
+              <span class="id">
+                <div id="customerInfo" class="d-flex flex-column align-items-start">
+                  <a href="login.html"> <!-- Anchor element with the link -->
+                    <i class="fas fa-user-circle mb-2 large-icon"></i>
+                  </a>
+                  <div id="customerNameEmail">
+                    <!-- Customer's name and email will be inserted here -->
+                  </div>
+                </div>
+              </span>
+            </ul>
+          </div>
+        </div>
+      </nav><br><br><br>
+
+
+<header>
+</header>
+
+<section class="banner-section">
+	<div class="container">
+		<div class="col-div-6">
+			<h1 class="heading" data-aos="fade-right" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">Muslim Blog that people will<br> actually want to read</h1>
+			<p class="p1" data-aos="zoom-in" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">Here is a blog on Muslim Religion and Festivals.</p>
+			<div class="input-box"><input type="text" placeholder="Enter Your Email"><button>Try it</button></div>
+		</div>
+		<div class="col-div-6">
+			<br><br><br><br>
+			<div style="text-align: center;float: right; margin-right: 15;" data-aos="fade-left" data-aos offset="200" data-aos-duration="2000" data-aos-once="true"><img src="images/banner pic.jpg" class="ban-img" style="width: 350px; height: 200px;"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</section>
+
+
+<section>
+	<div class="container">
+		<br><br>
+		<div class="col-div-6">
+				<div class="box-1">
+				<img src="images/religion pic.jpg" class="b-img"  data-aos="zoom-in" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+				<h3 class="heading1" data-aos="fade-right" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">Religion</h3>
+				<p class="blog-heading" data-aos="zoom-in" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">Muslim Religion</p>
+				<p class="text" data-aos="zoom-in" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">Provide an overview of the core beliefs and principles of Islam, such as the Five Pillars of Islam, the importance of the Quran, and the teachings of Prophet Muhammad (PBUH).</p>
+				<p class="text" data-aos="zoom-in" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">Explain the significance of Islamic practices like prayer, fasting during Ramadan, and the concept of Zakat (charity). </p>
+		</div>
+			</div>
+		<div class="col-div-6" data-aos="fade-left" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<div class="lr-box">
+			<div class="col-div-6">
+				<h3 class="heading1">Ramadan</h3>
+				<p class="blog-heading-1">Ramdan Kareem</p>
+				<p class="text">Ramadan Kareem the Month of Peace.</p>
+			</div>
+			<div class="col-div-6">
+				<img src="images/iftar.jpg" class="b-img-1">
+			</div>
+			<div class="clearfix"></div>
+			<hr class="line">
+			</div>
+
+
+			<div class="lr-box">
+			<div class="col-div-6">
+				<h3 class="heading1">Eid-ul-Fitr</h3>
+				<p class="blog-heading-1">Eid-ul-Fitr</p>
+				<p class="text">Eid-ul-Fitr is gifted by Allah after ramadan.</p>
+			</div>
+			<div class="col-div-6">
+				<img src="images/eid-ul-fitr.jpg" class="b-img-1">
+			</div>
+			<div class="clearfix"></div>
+			<hr class="line">
+			</div>
+
+			<div class="lr-box">
+			<div class="col-div-6">
+				<h3 class="heading1">Eid-ul-Adha</h3>
+				<p class="blog-heading-1">Eid-ul-Adha</p>
+				<p class="text">Eid-ul-Fitr is the month of Qurbani.</p>
+			</div>
+			<div class="col-div-6">
+				<img src="images/eid-ul-adha.jpg" class="b-img-1">
+			</div>
+			<div class="clearfix"></div>
+			<hr class="line">
+			</div>
+
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
+</section>
+
+<br><br>
+
+
+<section>
+	<div class="container" style="text-align:center;">
+		<h3 data-aos="fade-up" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">Muslim Festivals</h3>
+		<br>
+		
+		<div class="box-2" data-aos="fade-right" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/ramadan-card.jpg" class="b-img-1">
+			<h3 class="heading1">Ramadan Kareem</h3>
+				<p class="blog-heading-1">The Month of Peace.</p>
+        <a href=""><button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button></a>
+		</div>
+
+		<div class="box-2" data-aos="fade-up" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/eid-card.jpg" class="b-img-1">
+			<h3 class="heading1">Eid-Ul-Fitr</h3>
+				<p class="blog-heading-1">Eid-ul-Fitr is gifted by Allah after Ramadan.</p>
+				<button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+
+		<div class="box-2" data-aos="fade-left" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/adha-card.jpg" class="b-img-1">
+			<h3 class="heading1">Eid-ul-Adha</h3>
+				<p class="blog-heading-1">The month of Qurbani</p>
+				<button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+		
+		<div class="clearfix"></div>
+
+		<div class="box-2" data-aos="flip-left" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/milad-card.avif" class="b-img-1">
+			<h3 class="heading1">Eid-Milad-un-Nabi</h3>
+				<p class="blog-heading-1">The month of prophet Muhammad (PBUH)</p>
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+
+		<div class="box-2" data-aos="flip-up" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/lailat-ul-qadr-card.jpg" class="b-img-1">
+			<h3 class="heading1">Lailat-ul-Qadr</h3>
+				<p class="blog-heading-1">Considered one of the holiest nights of the year</p>
+				<button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+
+		<div class="box-2" data-aos="flip-right" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/ashura-card.jpg" class="b-img-1">
+			<h3 class="heading1">Ashura</h3>
+				<p class="blog-heading-1">This day holds significance for both Sunni and Shia Muslims.</p>
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+<div class="dis">
+		<div class="clearfix"></div>
+		<div class="box-2" data-aos="fade-right" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/muharram-card.jpg" class="b-img-1">
+			<h3 class="heading1">Muharram</h3>
+				<p class="blog-heading-1">The first month of the Islamic lunar calendar</p>
+				<button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+
+		<div class="box-2" data-aos="fade-up" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/eid-ghadeer-card.jpg" class="b-img-1">
+			<h3 class="heading1">Eid-e-Ghadeer</h3>
+				<p class="blog-heading-1">Celebrated by Shia Muslims,</p>
+				<button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+
+		<div class="box-2" data-aos="fade-left" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/eid-e-zahra-card.jpg" class="b-img-1">
+			<h3 class="heading1">Eid-e-Zahra</h3>
+				<p class="blog-heading-1">Also known as Fatima Zahra's birthday,</p>
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+
+		<div class="clearfix"></div>
+		<div class="box-2"  data-aos="flip-left" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/lailatul-baraat-card.png" class="b-img-1">
+			<h3 class="heading1">Lailat-ul-Baraat</h3>
+				<p class="blog-heading-1">Also known as the Night of Forgiveness</p>
+				<button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+
+		<div class="box-2"  data-aos="fade-up" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/miraj-card.jpg" class="b-img-1">
+			<h3 class="heading1">Isra and Mi'raj</h3>
+				<p class="blog-heading-1">It is observed with prayers.</p>
+				<button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+
+		<div class="box-2"  data-aos="flip-right" data-aos offset="200" data-aos-duration="2000" data-aos-once="true">
+			<img src="images/arafat-card.jpg" class="b-img-1">
+			<h3 class="heading1">Yawm al-Arafat</h3>
+				<p class="blog-heading-1">A significant day during the Hajj pilgrimage</p>
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+		</div>
+  </div>
+		<div class="clearfix"></div>
+	</div>
+</section><br><br>
+<center>
+  <button class="btn btn-primary" id="show">see more</button>
+</center><br><br>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-center p-4 border-bottom">
+      <!-- Left -->
+
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <!-- Facebook -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href=" https://www.facebook.com"
+          target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href=" https://www.twitter.com"
+          target="_blank" role="button"><i class="fab fa-twitter"></i></a>
+
+        <!-- Google -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href=" https://www.google.com"
+          target="_blank" role="button"><i class="fab fa-google"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href=" https://www.instagram.com"
+          target="_blank" role="button"><i class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href=" https://www.linkedin.com"
+          target="_blank" role="button"><i class="fab fa-linkedin-in"></i></a>
+        <!-- Github -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href=" https://www.github.com"
+          target="_blank" role="button"><i class="fab fa-github"></i></a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="jaa">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <img src="img/logo...jpg.jpg" style="width: 150px; height: 80px;" class="w-55">
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Religions
+            </h6>
+            <p>
+              <a href="muslim-religion.html"  class="text-reset">Muslim-Religion</a>
+            </p>
+            <p>
+              <a href="hindu-religion.html" class="text-reset">Hindu-Religion</a>
+            </p>
+            <p>
+              <a href="christian-religion.html" class="text-reset">Christian-Religion</a>
+            </p>
+            <p>
+              <a href="sikh-religion.html" class="text-reset">Sikh-Religion</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Festivals
+            </h6>
+            <p>
+              <a href="ramdan-festival.html" class="text-reset">Ramadan</a>
+            </p>
+            <p>
+              <a href="holy-festival.html" class="text-reset">Holy</a>
+            </p>
+            <p>
+              <a href="christmas-festival.html" class="text-reset">Christmas</a>
+            </p>
+            <p>
+              <a href="" class="text-reset">Eid-Ul-Fitr</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i>Aptech Choaching Center</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              festoeventure@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4 bg-primary text-white">
+      © 2023 Copyright:
+      <a class=" fw-bold text-white" href="#">FestoEventure.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- <script>
+    $(document).ready(function(){
+      $("#show").click(function(){
+        $(".dis").toggle("slow")
+      });
+    });
+  </script> -->
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 1) {
+          $("nav ").css("background-color", "lightgrey");
+        }
+        else {
+          $("nav ").css("background", "white");
+        }
+      });
+    });
+  </script>
+
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>

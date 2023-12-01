@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Contact Us Form | CodingLab</title>
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0″ />
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- style sheet -->
+  <link rel="stylesheet" href="contact.css">
+
+  <!-- AOS CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+  <!-- home page link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- java -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRXRQK5b7/QXpBSm5waxUstc5eIKkF8CPFj7FA3GC" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init("oWUXmwToZmhlL_yES");
+  })();
+</script>
+
+
+<script>
+  function openPopup(message, response) {
+    const popup = document.getElementById("popup");
+    const popupContent = document.querySelector(".popup-content");
+
+    // Set the content of the popup
+    const popupMessage = document.createElement("p");
+    popupMessage.textContent = message;
+
+    if (response) {
+      const popupResponse = document.createElement("p");
+      popupResponse.textContent = JSON.stringify(response);
+      popupContent.appendChild(popupResponse);
+    }
+
+    popupContent.appendChild(popupMessage);
+
+    // Show the popup
+    popup.style.display = "block";
+
+    // Close the popup when the close button is clicked
+    const closePopup = document.getElementById("closePopup");
+    closePopup.addEventListener("click", function () {
+      popup.style.display = "none";
+      // Remove the dynamically added message and response
+      popupContent.removeChild(popupMessage);
+      if (response) {
+        popupContent.removeChild(popupResponse);
+      }
+    });
+  }
+
+  // Button to send the mail and open the popup
+  const sendButton = document.querySelector(".button input");
+  sendButton.addEventListener("click", function () {
+    sendMail();
+  });
+
+  function sendMail() {
+    var subject = document.getElementById("subject").value;
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    // Ensure all fields are filled before sending
+    if (subject && name && email && message) {
+      emailjs
+        .send("service_xb5n3er", "template_dxxjw09", {
+          from_subject: subject,
+          from_name: name,
+          from_email: email,
+          message: message,
+        })
+        .then(
+          function (response) {
+            openPopup("Thank you for your message! We've received your email.");
+          },
+          function (error) {
+            openPopup("Error sending email:", error);
+          }
+        );
+
+      // Clear form fields after sending
+      document.getElementById("subject").value = "";
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+    } else {
+      openPopup("Please fill in all fields before sending.");
+    }
+  }
+</script>
+
+<script>
+  // Function to display customer information
+  function displayCustomerInfo() {
+    const customerInfoDiv = document.getElementById("customerInfo");
+    const customerNameEmailDiv = document.getElementById("customerNameEmail");
+    const userIcon = document.getElementById("userIcon");
+    const logoutButton = document.getElementById("logoutButton");
+    const storedUsername = localStorage.getItem('Username');
+
+    if (storedUsername) {
+      // If the customer is logged in, display their name and email
+      customerNameEmailDiv.innerHTML = `${storedUsername} (${localStorage.getItem('Email')})`;
+      userIcon.className = "fas fa-user-circle me-2"; // Change the icon
+      customerInfoDiv.style.display = "flex"; // Show the customer info div
+      logoutButton.style.display = "inline"; // Show the logout button
+    } else {
+      // If the customer is not logged in, hide the customer info and logout button
+      customerInfoDiv.style.display = "none";
+      logoutButton.style.display = "none";
+    }
+  }
+
+  // Call the function to display customer information when the page loads
+  window.addEventListener("load", displayCustomerInfo);
+
+</script>
+
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="logo.jpg" alt="" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa-solid fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown position-static">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+              aria-expanded="false">
+              Religions
+            </a>
+            <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown"
+              style="border-top-left-radius: 0; border-top-right-radius: 0">
+              <div class="container">
+                <div class="row my-4">
+                  <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="list-group list-group-flush">
+                      <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                        <a href="muslim.html"><b>Muslim's Religion</b></a>
+                      </p>
+                      <a href="" class="list-group-item list-group-item-action"
+                        style="font-size: 19px"><b>Culture's</b></a>
+                      <a href="" class="list-group-item list-group-item-action">Ramadan</a>
+                      <a href="" class="list-group-item list-group-item-action">Eid-ul-Fitr</a>
+                      <a href="" class="list-group-item list-group-item-action">Eid-ul-Adha</a>
+                      <a href="" class="list-group-item list-group-item-action">Eid-Milad-un-Nabi</a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="list-group list-group-flush">
+                      <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                        <a href="hindu.html"><b>Hindu's Religion</b></a>
+                      </p>
+                      <a href="" class="list-group-item list-group-item-action"
+                        style="font-size: 19px"><b>Culture's</b></a>
+                      <a href="" class="list-group-item list-group-item-action">Perspiciatis quo</a>
+                      <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                      <a href="" class="list-group-item list-group-item-action">Laudantium maiores</a>
+                      <a href="" class="list-group-item list-group-item-action">Provident dolor</a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                    <div class="list-group list-group-flush">
+                      <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                        <a href="christian.html"><b>Christian Religion</b></a>
+                      </p>
+                      <a href="" class="list-group-item list-group-item-action"
+                        style="font-size: 19px"><b>Culture's</b></a>
+                      <a href="" class="list-group-item list-group-item-action">Cras justo odio</a>
+                      <a href="" class="list-group-item list-group-item-action">Est iure</a>
+                      <a href="" class="list-group-item list-group-item-action">Praesentium</a>
+                      <a href="" class="list-group-item list-group-item-action">Laboriosam</a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3">
+                    <div class="list-group list-group-flush">
+                      <p class="mb-0 list-group-item text-uppercase font-weight-bold">
+                        <a href="sikh.html"><b>Sikhism Religion</b></a>
+                      </p>
+                      <a href="" class="list-group-item list-group-item-action"
+                        style="font-size: 19px"><b>Culture's</b></a>
+                      <a href="" class="list-group-item list-group-item-action">Saepe</a>
+                      <a href="" class="list-group-item list-group-item-action">Vel alias</a>
+                      <a href="" class="list-group-item list-group-item-action">Sunt doloribus</a>
+                      <a href="" class="list-group-item list-group-item-action">Cum dolores</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Gallery</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Blogs
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Muslim's Blog</a></li>
+              <li><a class="dropdown-item" href="#">Hindu's Blog</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#">Christian's Blog</a></li>
+              <li><a class="dropdown-item" href="#">Sikh Blog</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <!-- login user id -->
+        <div id="customerInfo" style="display: none" class="d-flex align-items-center">
+          <i class="fas fa-user-circle me-2 large-icon"></i> <!-- Add your icon here -->
+          <div id="customerNameEmail">
+            <!-- Customer's name and email will be inserted here -->
+          </div>
+        </div>
+
+
+
+        <!-- lodin or singup html -->
+
+        <li class="nav-item">
+          <a class="nav-link login-button" href="./login.html#sign-in">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </a>
+        </li>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn-searchin btn-outline-success" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <br /><br />
+
+  <!-- header COntact us -->
+  <div class="background">
+    <div class="context">
+      <h1>CONTACT US</h1>
+    </div>
+
+    <div class="area">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- maps area -->
+  <div class="maps-heading">
+    <h1>Our Location</h1>
+  </div>
+  <div class="maps-cover">
+    <center>
+      <div class="maps">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d14472.3692267383!2d67.03455594069406!3d24.928925169148588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3eb33f90157042d3%3A0x93d609e8bec9a880!2sAptech%20Computer%20Education%20North%20Nazimabad%20Center%D8%8C%20SD-1%2C%20Block%20A%20North%20Nazimabad%20Town%2C%20Karachi%2C%2074700%2C%20Pakistan!3m2!1d24.9273733!2d67.0330334!5e0!3m2!1sen!2s!4v1697038337112!5m2!1sen!2s"
+          width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </center>
+  </div>
+
+  <!-- pera -->
+  <div class="pera_main">
+    <h1>Get in Touch with Us</h1><br>
+    <p class="paragraph" data-aos="zoom-in-down">
+      "Thank you for reaching out to us! To get in touch, please fill out the
+      form below or give us a call directly. We value your questions and
+      suggestions. We are eager to hear your thoughts and ready to assist in
+      making our business better through your feedback."
+    </p>
+  </div>
+
+  <!-- from -->
+  <div class="container" data-aos="fade-right"">
+      <div class=" content">
+    <div class="left-side">
+      <div class="address details" data-aos="fade-up-right">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="topic">Address</div>
+        <div class="text-one">Aptech Coaching Center</div>
+        <div class="text-two">North Nazmabad</div>
+      </div>
+      <div class="phone details" data-aos="fade-up-right">
+        <i class="fas fa-phone-alt"></i>
+        <div class="topic">Phone</div>
+        <div class="text-one">+92 3332 489072</div>
+        <div class="text-two">+92 1458 557034</div>
+      </div>
+      <div class="email details" data-aos="fade-up-right">
+        <i class="fas fa-envelope"></i>
+        <div class="topic">Email</div>
+        <div class="text-one">festoeventure@gmail.com</div>
+        <div class="text-two">info.codinglab@gmail.com</div>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="topic-text">Send us a message</div>
+      <div class="form_pera" data-aos="zoom-in">
+        If you have any work from me or any types of quries related to my
+        tutorial, you can send me message from here. It's my pleasure to
+        help you.
+      </div>
+      <form action="#" method="post">
+        <div class="input-box">
+          <input type="text" id="name" required placeholder="Enter your name" />
+        </div>
+        <div class="input-box">
+          <input type="text" id="subject" required placeholder="Enter your subject" />
+        </div>
+        <div class="input-box">
+          <input type="text" id="email" required placeholder="Enter your email" />
+        </div>
+        <div class="input-box message-box">
+          <input type="text" id="message" required placeholder="Enter your message" />
+        </div>
+        <div class="button">
+          <input type="button" value="Send Now" onclick="sendMail(),openPopup()" />
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  <br /><br /><br /><br />
+
+  <!-- footer -->
+  <div class="footer">
+    <footer class="text-center text-lg-start bg-light text-muted">
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <div>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://google.com" target="_blank" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href=https://linkedin.com" target="_blank"" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com" target="_blank" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </section>
+      <section class="">
+        <div class="containers text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                <img src="logo.jpg" alt="" style="width: 150px; height: 80px" />
+              </h6>
+              <p>
+                Here you can use rows and columns to organize your footer
+                content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Religions</h6>
+              <p>
+                <a href="muslim-religion.html" class="text-reset">Muslim-Religion</a>
+              </p>
+              <p>
+                <a href="hindu-religion.html" class="text-reset">Hindu-Religion</a>
+              </p>
+              <p>
+                <a href="christian-religion.html" class="text-reset">Christian-Religion</a>
+              </p>
+              <p>
+                <a href="sikh-religion.html" class="text-reset">Sikh-Religion</a>
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Festivals</h6>
+              <p>
+                <a href="ramdan-festival.html" class="text-reset">Ramadan</a>
+              </p>
+              <p>
+                <a href="holy-festival.html" class="text-reset">Holy</a>
+              </p>
+              <p>
+                <a href="christmas-festival.html" class="text-reset">Christmas</a>
+              </p>
+              <p>
+                <a href="" class="text-reset">Eid-Ul-Fitr</a>
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> Aptech coaching center north nazmabad</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                festoculture@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> +92 3332 489072</p>
+              <p><i class="fas fa-print me-3"></i> +92 1458 557034</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+        © 2023 Copyright:
+        <a class="text-reset fw-bold" href="#">FestoCulture.com</a>
+      </div>
+    </footer>
+  </div>
+
+
+  <div class="feedback-icon">
+    <i id="openFeedback"><img src="feedback icon.png" alt="" width="70px"></i>
+  </div>
+
+  <!-- Feedback box (hidden by default) -->
+  <div id="panel" class="panel-container">
+    <button id="closeFeedback" onclick="closeFeedbackPanel()">&#10006;</button>
+    <strong>How satisfied are you with our <br /> customer support performance?</strong>
+    <div class="ratings-container">
+      <div class="rating">
+        <img src="https://image.flaticon.com/icons/svg/187/187150.svg" alt="">
+        <small id="unhappy">Unhappy</small>
+      </div>
+
+      <div class="rating">
+        <img src="https://image.flaticon.com/icons/svg/187/187136.svg" alt="" />
+        <small id="neutral">Neutral</small>
+      </div>
+
+      <div class="rating active">
+        <img src="https://image.flaticon.com/icons/svg/187/187133.svg" alt="" />
+        <small id="satisfied">Satisfied</small>
+      </div>
+    </div>
+    <button class="btn-feed" id="send">Send Review</button>
+  </div>
+  <style>
+    /* Add these styles to your existing CSS */
+
+  </style>
+
+  <!-- popup html -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <h2>Thank You for Choosing Us!</h2>
+      <p>Your trust and support mean the world to us. We're here to serve you.</p>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+
+
+  <!-- feedback -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const ratings = document.querySelectorAll('.rating')
+      const ratingsContainer = document.querySelector('.ratings-container')
+      const sendBtn = document.querySelector('#send')
+      const panel = document.querySelector('#panel')
+      const openFeedback = document.querySelector('#openFeedback')
+      const closeFeedback = document.querySelector('#closeFeedback')
+
+      let selectedRating = 'Satisfied'
+
+      ratingsContainer.addEventListener('click', (e) => {
+        if (e.target.parentNode.classList.contains('rating')) {
+          removeActive()
+          e.target.parentNode.classList.add('active')
+          selectedRating = e.target.nextElementSibling.innerHTML
+        }
+        if (e.target.classList.contains('rating')) {
+          removeActive()
+          e.target.classList.add('active')
+          selectedRating = e.target.nextElementSibling.innerHTML
+        }
+      })
+
+      sendBtn.addEventListener('click', (e) => {
+        panel.innerHTML = `
+      Thank You!
+      Feedback : ${selectedRating}
+      We'll use your feedback to improve our customer support
+      <button id="closeFeedback">&#10006;</button>  `
+        // Close feedback panel when the user clicks the new close button
+        const newCloseFeedback = document.querySelector('#closeFeedback');
+        newCloseFeedback.addEventListener('click', function () {
+          closeFeedbackPanel();
+        });
+      })
+
+      function removeActive() {
+        for (let i = 0; i < ratings.length; i++) {
+          ratings[i].classList.remove('active')
+        }
+      }
+
+      openFeedback.addEventListener('click', function () {
+        openFeedbackPanel();
+      });
+
+      closeFeedback.addEventListener('click', function () {
+        closeFeedbackPanel();
+      });
+
+      function openFeedbackPanel() {
+        panel.style.display = 'block';
+      }
+
+      function closeFeedbackPanel() {
+        panel.style.display = 'none';
+      }
+    });
+  </script>
+
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
